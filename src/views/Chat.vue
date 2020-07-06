@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page-wrapper" v-if="!loader">
+    <div class="page-wrapper">
       <div
         class="page-int-wrapper"
         id="pageWrapper"
@@ -17,28 +17,23 @@
         <RightSidebar />
       </div>
     </div>
-
-    <Loader v-else-if="loader" />
   </div>
 </template>
 
 <script>
 import { CometChat } from "@cometchat-pro/chat";
-import Loader from "../lib/cometchat-components/components/Loader";
 import GroupList from "../lib/cometchat-components/components/GroupList";
 import MessageContainer from "../lib/cometchat-components/components/MessageContainer";
 import RightSidebar from "../lib/cometchat-components/components/RightSidebar";
 
 export default {
   components: {
-    Loader,
     GroupList,
     MessageContainer,
     RightSidebar
   },
   data() {
     return {
-      loader: false,
       currentUser: null,
       leftOpen: true,
       centerOpen: false,
